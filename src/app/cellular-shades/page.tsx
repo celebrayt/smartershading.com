@@ -31,7 +31,7 @@ export default function CellularShadesPage() {
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10 text-center">
               <p className="text-5xl font-bold text-terracotta mb-2">~40%</p>
               <p className="text-white font-semibold mb-2">Heat Loss Reduction</p>
-              <p className="text-sand-light/60 text-sm">Insulating air pockets reduce heat loss in winter, keeping your home warm during cool desert nights</p>
+              <p className="text-sand-light/60 text-sm">Insulating air pockets reduce heat loss in winter, keeping your home warm during cold nights</p>
             </div>
           </div>
           <div className="mt-8 grid sm:grid-cols-3 gap-4">

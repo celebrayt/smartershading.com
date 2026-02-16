@@ -12,7 +12,7 @@ const products = [
   { name: 'Exterior & Patio Shades', href: '/exterior-patio-shades' },
 ];
 
-const locations = [
+const azLocations = [
   { name: 'Phoenix', href: '/locations/phoenix' },
   { name: 'Scottsdale', href: '/locations/scottsdale' },
   { name: 'Paradise Valley', href: '/locations/paradise-valley' },
@@ -22,12 +22,19 @@ const locations = [
   { name: 'Gilbert', href: '/locations/gilbert' },
   { name: 'Glendale', href: '/locations/glendale' },
   { name: 'Tucson', href: '/locations/tucson' },
-  { name: 'Los Angeles', href: '/locations/los-angeles' },
-  { name: 'San Diego', href: '/locations/san-diego' },
-  { name: 'Las Vegas', href: '/locations/las-vegas' },
-  { name: 'San Francisco', href: '/locations/san-francisco' },
-  { name: 'Portland', href: '/locations/portland' },
+];
+
+const waLocations = [
   { name: 'Seattle', href: '/locations/seattle' },
+  { name: 'Bellevue', href: '/locations/bellevue' },
+  { name: 'Tacoma', href: '/locations/tacoma' },
+  { name: 'Spokane', href: '/locations/spokane' },
+];
+
+const idLocations = [
+  { name: 'Coeur d\'Alene', href: '/locations/coeur-d-alene' },
+  { name: 'Post Falls', href: '/locations/post-falls' },
+  { name: 'Sandpoint', href: '/locations/sandpoint' },
 ];
 
 export function Header() {
@@ -104,13 +111,19 @@ export function Header() {
                 <div className="absolute top-full left-0 pt-2">
                   <div className="bg-white rounded-lg shadow-lg border border-sand/50 py-2 w-56 max-h-80 overflow-y-auto">
                     <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider">Arizona</div>
-                    {locations.slice(0, 9).map((loc) => (
+                    {azLocations.map((loc) => (
                       <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
                         {loc.name}
                       </Link>
                     ))}
-                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider mt-2 border-t border-sand/50 pt-3">West Coast</div>
-                    {locations.slice(9).map((loc) => (
+                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider mt-2 border-t border-sand/50 pt-3">Washington</div>
+                    {waLocations.map((loc) => (
+                      <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
+                        {loc.name}
+                      </Link>
+                    ))}
+                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider mt-2 border-t border-sand/50 pt-3">Northern Idaho</div>
+                    {idLocations.map((loc) => (
                       <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
                         {loc.name}
                       </Link>
@@ -173,7 +186,7 @@ export function Header() {
             <div className="py-2 border-b border-sand/30">
               <p className="text-xs font-semibold text-charcoal-light uppercase tracking-wider px-3 py-2">Locations</p>
               <div className="grid grid-cols-2 gap-x-4">
-                {locations.slice(0, 9).map((loc) => (
+                {[...azLocations, ...waLocations, ...idLocations].map((loc) => (
                   <Link key={loc.href} href={loc.href} className="block px-3 py-2 text-charcoal hover:text-terracotta transition-colors" onClick={() => setMobileOpen(false)}>
                     {loc.name}
                   </Link>

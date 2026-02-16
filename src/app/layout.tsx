@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | SmarterShading',
   },
   description:
-    'Arizona\'s premier provider of premium motorized and automated window shades. Expert installation, smart home integration, and solutions designed for desert living.',
+    'Premium motorized and automated window shades for every climate. Expert Lutron installation, smart home integration, and solutions designed for your home.',
   metadataBase: new URL('https://smartershading.com'),
 };
 

@@ -7,6 +7,7 @@ export interface Product {
   heroDescription: string;
   priceRange: string;
   image: string;
+  heroImage: string;
   features: string[];
   benefits: { title: string; description: string }[];
   useCases: { title: string; description: string }[];
@@ -24,7 +25,8 @@ export const products: Product[] = [
     description: 'Transform your home with Lutron motorized window shades — the most reliable, whisper-quiet, and beautifully engineered automated shading systems available. Featuring Triathlon, Sivoia, and Palladiom product lines.',
     heroDescription: 'As an authorized Lutron dealer, we exclusively install the world\'s finest motorized shading systems. From the battery-powered Triathlon with industry-leading 3-5 year battery life, to the hardwired precision of Sivoia QS, to the hand-finished luxury of Palladiom — every shade integrates seamlessly with Lutron\'s ecosystem including Caseta, RadioRA, and HomeWorks.',
     priceRange: '$400 - $2,500 per window',
-    image: '/images/products/motorized-shades.jpg',
+    image: '/images/products/motorized-shades.webp',
+    heroImage: '/images/products/motorized-shades-hero.webp',
     features: [
       'Lutron Triathlon: battery-powered with 3-5 year battery life',
       'Lutron Sivoia QS: hardwired precision with near-silent operation (<44 dBA)',
@@ -65,7 +67,8 @@ export const products: Product[] = [
     description: 'The most popular window shade in Arizona — Lutron roller shades offer a sleek, modern look with versatile fabric options from sheer to blackout, available in every Lutron motorization tier.',
     heroDescription: 'Arizona\'s most popular shade style combines sleek modern aesthetics with Lutron\'s legendary precision. Choose from hundreds of fabrics in light-filtering, solar, and blackout options — available across Triathlon (battery), Sivoia QS (hardwired), and Palladiom (luxury) product lines.',
     priceRange: '$150 - $800 per window',
-    image: '/images/products/roller-shades.jpg',
+    image: '/images/products/roller-shades.png',
+    heroImage: '/images/products/roller-shades-hero.png',
     features: [
       'Light-filtering, solar & blackout fabric options',
       'Hundreds of colors, patterns & textures',
@@ -73,13 +76,13 @@ export const products: Product[] = [
       'Sivoia QS Roller 20: ultra-slim 1.25" diameter profile',
       'Triathlon WIDR: covers windows up to 12\' x 12\'',
       'Architectural fascia or exposed-roll mounting',
-      'Easy-clean fabrics ideal for dusty desert climates',
+      'Easy-clean fabrics ideal for dust, pollen, and moisture-prone climates',
       'Lutron Pico remote & app control',
     ],
     benefits: [
       { title: 'Modern Aesthetic', description: 'Clean, minimal lines that complement contemporary Arizona architecture. Palladiom\'s exposed roller design with solid aluminum brackets makes the shade itself an architectural feature.' },
       { title: 'Versatile Light Control', description: 'From gentle light filtering to 100% opaque blackout — Lutron offers sheer, dim-out, and blackout fabrics to precisely control light and privacy in every room.' },
-      { title: 'Low Maintenance', description: 'Smooth fabrics resist dust buildup and are easy to wipe clean — essential in Arizona\'s dusty desert climate. Lutron provides cleaning and maintenance guidelines for every fabric.' },
+      { title: 'Low Maintenance', description: 'Smooth fabrics resist dust and debris buildup and are easy to wipe clean — whether you\'re dealing with desert dust, pollen, or everyday wear. Lutron provides cleaning and maintenance guidelines for every fabric.' },
       { title: 'Scalable Investment', description: 'Start with manual roller shades and upgrade to Lutron motorization later, or choose motorized from the start. Every tier uses the same premium fabrics.' },
     ],
     useCases: [
@@ -91,7 +94,7 @@ export const products: Product[] = [
     faqs: [
       { question: 'What is the difference between roller shades and blinds?', answer: 'Roller shades use a single piece of fabric that rolls around a tube, creating a clean, uncluttered look. Blinds have individual slats that tilt to control light. Roller shades offer a more modern aesthetic and are easier to clean, making them the preferred choice for contemporary Arizona homes.' },
       { question: 'Can roller shades be motorized with Lutron?', answer: 'Absolutely! Lutron offers roller shades across all three motorization tiers: Triathlon (battery-powered, 3-5 year battery life, no wiring needed), Sivoia QS (hardwired, most versatile), and Palladiom (luxury, hand-finished brackets). We help you choose the right tier during your consultation.' },
-      { question: 'How do I choose between light-filtering and blackout roller shades?', answer: 'Light-filtering shades softly diffuse sunlight while maintaining natural brightness — ideal for living rooms and kitchens. Blackout shades are 100% opaque and eliminate all daylight — perfect for bedrooms and media rooms. Many Arizona homeowners use a mix throughout their home based on each room\'s needs.' },
+      { question: 'How do I choose between light-filtering and blackout roller shades?', answer: 'Light-filtering shades softly diffuse sunlight while maintaining natural brightness — ideal for living rooms and kitchens. Blackout shades are 100% opaque and eliminate all daylight — perfect for bedrooms and media rooms. Many homeowners use a mix throughout their home based on each room\'s needs.' },
     ],
     metaTitle: 'Lutron Roller Shades Phoenix & Arizona',
     metaDescription: 'Premium Lutron roller shades in Phoenix & Arizona. Blackout, light-filtering & solar fabrics. Triathlon, Sivoia & Palladiom options. Free consultation.',
@@ -104,7 +107,8 @@ export const products: Product[] = [
     description: 'Lutron honeycomb cellular shades trap air in distinct pockets, creating a powerful insulating barrier — reducing energy costs by up to 40%. Available in the Triathlon battery-powered system.',
     heroDescription: 'Engineered for energy efficiency without compromising on style. Lutron Triathlon honeycomb shades feature insulating cell construction that reduces heat gain by up to 60% — a game-changer for Arizona homes. All standard honeycomb fabrics include a white reflective backing to keep your space cool.',
     priceRange: '$200 - $1,200 per window',
-    image: '/images/products/cellular-shades.jpg',
+    image: '/images/products/cellular-shades.webp',
+    heroImage: '/images/products/cellular-shades-hero.webp',
     features: [
       'Single-cell & double-cell insulating construction',
       'White reflective backing on all standard fabrics',
@@ -128,7 +132,7 @@ export const products: Product[] = [
       { title: 'Large Window Walls', description: 'Lutron Triathlon WIDR accommodates large shades up to 12\' x 12\', bringing motorized honeycomb shading to Arizona\'s expansive glass walls.' },
     ],
     faqs: [
-      { question: 'Are cellular shades worth the investment in Arizona?', answer: 'Cellular shades are one of the best investments for Arizona homeowners. With cooling costs making up 50-70% of summer energy bills, Lutron honeycomb shades that reduce solar heat gain by up to 60% can pay for themselves within 2-3 years. The aluminum lining option provides even greater savings for the most sun-exposed windows.' },
+      { question: 'Are cellular shades worth the investment?', answer: 'Cellular shades are one of the best investments for any homeowner looking to manage energy costs. In hot climates, honeycomb cells reduce solar heat gain by up to 60%, cutting cooling bills significantly. In colder climates, the same insulating cells trap warmth inside, lowering heating costs through long winters. Lutron honeycomb shades can pay for themselves within 2-3 years. The aluminum lining option provides even greater savings for the most sun-exposed windows.' },
       { question: 'What is the difference between single-cell and double-cell?', answer: 'Single-cell shades have one layer of honeycomb pockets and provide good insulation at a lower price point. Double-cell shades have two layers, nearly doubling the insulating value. Lutron also offers an aluminum lining option for maximum energy savings. We recommend double-cell with aluminum for south and west-facing windows and single-cell for north and east-facing windows.' },
       { question: 'Can Lutron cellular shades be motorized?', answer: 'Yes! Lutron Triathlon honeycomb shades are battery-powered with an industry-leading 3-5 year battery life using standard D-cell batteries. They can be programmed to close automatically during peak heat hours via the Lutron app, Pico remote, or integrated with Caseta or RadioRA systems.' },
     ],
@@ -141,9 +145,10 @@ export const products: Product[] = [
     shortName: 'Solar',
     tagline: 'Block the Glare, Keep the View',
     description: 'Engineered specifically for sun control, Lutron solar shades reduce glare and UV exposure while preserving your outdoor views — the perfect solution for Arizona\'s intense sunlight.',
-    heroDescription: 'Designed for Arizona\'s relentless sun, Lutron solar shades give you precise control over glare and heat without sacrificing your mountain, desert, or city views. Available across Triathlon (battery), Sivoia QS (hardwired), and Palladiom (luxury) — with fabrics curated to balance indoor comfort and outdoor connection.',
+    heroDescription: 'Designed to tame intense sun, harsh glare, and UV damage in any climate, Lutron solar shades give you precise control over light and heat without sacrificing your mountain, valley, or city views. Available across Triathlon (battery), Sivoia QS (hardwired), and Palladiom (luxury) — with fabrics curated to balance indoor comfort and outdoor connection.',
     priceRange: '$200 - $1,000 per window',
-    image: '/images/products/solar-shades.jpg',
+    image: '/images/products/solar-shades.webp',
+    heroImage: '/images/products/solar-shades-hero.webp',
     features: [
       'Openness factors from 1% to 14%',
       'Blocks up to 99% of UV rays',
@@ -161,7 +166,7 @@ export const products: Product[] = [
       { title: 'Natural Light', description: 'Enjoy abundant natural light without the heat and glare. Lutron solar shades let light in while filtering the harshness, maintaining the bright, open feel Arizona homes are designed for.' },
     ],
     useCases: [
-      { title: 'Living Rooms with Views', description: 'Enjoy Sonoran Desert panoramas without squinting. Lutron solar shades preserve views while cutting glare and heat. Palladiom\'s exposed roller design makes the shade itself beautiful.' },
+      { title: 'Living Rooms with Views', description: 'Enjoy sweeping mountain, forest, or desert panoramas without squinting. Lutron solar shades preserve views while cutting glare and heat. Palladiom\'s exposed roller design makes the shade itself beautiful.' },
       { title: 'Home Offices', description: 'Eliminate monitor glare and reduce eye strain. Schedule shades via the Lutron app to adjust throughout the workday as the sun moves.' },
       { title: 'Sunrooms & Enclosed Patios', description: 'Make glass-heavy rooms usable year-round. Sivoia QS tensioned solar shades are available in skylight and angled configurations for challenging installations.' },
       { title: 'Commercial Spaces', description: 'Professional-grade Lutron solar shades for offices, restaurants, and retail spaces. Sivoia QS supports commercial-scale installations with centralized control.' },
@@ -182,7 +187,8 @@ export const products: Product[] = [
     description: 'The ultimate design statement in window treatments — Lutron Sivoia QS Roman shades bring luxurious fabric folds and architectural elegance to any room with whisper-quiet motorized operation.',
     heroDescription: 'For homeowners and designers who demand beauty alongside function, our Lutron Sivoia QS Roman shades deliver unmatched elegance. Choose from flat, hobbled, or relaxed fold styles in hundreds of premium fabrics — all powered by Lutron\'s near-silent hardwired motors.',
     priceRange: '$350 - $1,800 per window',
-    image: '/images/products/roman-shades.jpg',
+    image: '/images/products/roman-shades.png',
+    heroImage: '/images/products/roman-shades-hero.webp',
     features: [
       'Flat, hobbled & relaxed fold styles',
       'Hundreds of premium fabrics',
@@ -195,7 +201,7 @@ export const products: Product[] = [
     ],
     benefits: [
       { title: 'Design Statement', description: 'Roman shades add soft texture, depth, and architectural interest that flat shades cannot match. Paired with Lutron\'s Sivoia QS, they rise and lower with precision — a designer\'s favorite for good reason.' },
-      { title: 'Fabric Versatility', description: 'From crisp linens to rich velvets, the fabric options are virtually limitless. Match any interior design style from desert modern to traditional Southwest.' },
+      { title: 'Fabric Versatility', description: 'From crisp linens to rich velvets, the fabric options are virtually limitless. Match any interior design style from modern minimalist to rustic lodge to traditional Southwest.' },
       { title: 'Light Control', description: 'Available with blackout, thermal, or light-filtering linings to precisely control light entering your space. Lutron\'s precision motor stops at any position along the full travel.' },
       { title: 'Smart Integration', description: 'Lutron Sivoia QS Roman shades integrate with your complete Lutron ecosystem — control lights and shades together in scenes for the perfect ambiance at every time of day.' },
     ],
@@ -206,7 +212,7 @@ export const products: Product[] = [
       { title: 'Kitchen & Breakfast Nooks', description: 'Relaxed-fold Romans add warmth and charm to casual dining areas and kitchen windows. Motorized operation keeps hands-free when cooking.' },
     ],
     faqs: [
-      { question: 'What are the different Roman shade fold styles?', answer: 'Three main fold styles: Flat fold creates crisp horizontal pleats — the most modern option. Hobbled (teardrop) fold maintains soft cascading loops — the most luxurious look. Relaxed fold has a gentle curve at the bottom — perfect for a laid-back desert aesthetic.' },
+      { question: 'What are the different Roman shade fold styles?', answer: 'Three main fold styles: Flat fold creates crisp horizontal pleats — the most modern option. Hobbled (teardrop) fold maintains soft cascading loops — the most luxurious look. Relaxed fold has a gentle curve at the bottom — perfect for a laid-back, casual aesthetic.' },
       { question: 'Are Lutron Roman shades motorized?', answer: 'Yes! Our Lutron Sivoia QS Roman shades feature whisper-quiet hardwired motors operating at less than 44 dBA. They integrate with Caseta, RadioRA, and HomeWorks systems for full smart home control including voice commands via Alexa, Google Home, and Siri.' },
       { question: 'Are Roman shades a good choice for Arizona?', answer: 'Roman shades work beautifully in Arizona homes with the right lining. We recommend thermal or blackout linings for south and west-facing windows. The fabric adds an extra layer of insulation, and Lutron\'s automated scheduling ensures they close before the afternoon heat hits.' },
     ],
@@ -222,6 +228,7 @@ export const products: Product[] = [
     heroDescription: 'Arizona\'s outdoor living season is year-round — and so are our exterior shades. From motorized patio drop shades to cable-guided wind-resistant systems, we help you enjoy your outdoor spaces in comfort. Integrated with your Lutron whole-home system for seamless indoor-outdoor control.',
     priceRange: '$500 - $3,000 per opening',
     image: '/images/products/exterior-shades.jpg',
+    heroImage: '/images/products/exterior-shades-hero.jpg',
     features: [
       'Motorized & manual operation',
       'Cable-guided & sealed-track systems',

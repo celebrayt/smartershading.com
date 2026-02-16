@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { blogPosts, getBlogPost } from '@/data/blog-posts';
 import { buildMetadata } from '@/lib/metadata';
@@ -147,7 +148,15 @@ export default async function BlogPostPage({ params }: Props) {
                     href={`/blog/${related.slug}`}
                     className="group flex gap-4 p-4 bg-white rounded-xl border border-sand/30 hover:border-terracotta/30 transition-colors"
                   >
-                    <div className="w-20 h-16 bg-sand-light rounded-lg shrink-0" />
+                    <div className="w-20 h-16 relative rounded-lg shrink-0 overflow-hidden bg-sand-light">
+                      <Image
+                        src={related.image}
+                        alt={related.title}
+                        fill
+                        className="object-cover"
+                        sizes="80px"
+                      />
+                    </div>
                     <div>
                       <p className="font-semibold text-navy group-hover:text-terracotta transition-colors text-sm">
                         {related.title}

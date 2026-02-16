@@ -22,7 +22,7 @@ export default function GalleryPage() {
             Project Gallery
           </h1>
           <p className="text-lg text-charcoal-light mb-10 max-w-2xl">
-            Browse our recent installations across Arizona and the West Coast. Filter by shade type or room to find inspiration for your project.
+            Browse our recent installations across Arizona, Washington, and Northern Idaho. Filter by shade type or room to find inspiration for your project.
           </p>
           <GalleryGrid />
         </div>

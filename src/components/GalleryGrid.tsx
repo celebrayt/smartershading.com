@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface GalleryItem {
   id: string;
@@ -9,21 +10,22 @@ interface GalleryItem {
   roomType: string;
   location: string;
   description: string;
+  image: string;
 }
 
 const galleryItems: GalleryItem[] = [
-  { id: '1', title: 'Modern Great Room Motorized Shades', shadeType: 'Motorized', roomType: 'Living Room', location: 'Scottsdale', description: 'Floor-to-ceiling motorized solar shades with Lutron integration in a contemporary desert home.' },
-  { id: '2', title: 'Blackout Roller Master Suite', shadeType: 'Roller', roomType: 'Bedroom', location: 'Paradise Valley', description: 'Blackout roller shades with cassette valance in a luxury master bedroom.' },
-  { id: '3', title: 'Cellular Shades Family Room', shadeType: 'Cellular', roomType: 'Living Room', location: 'Phoenix', description: 'Double-cell honeycomb shades reducing cooling costs in a west-facing family room.' },
-  { id: '4', title: 'Solar Shades Home Office', shadeType: 'Solar', roomType: 'Office', location: 'Tempe', description: '5% openness solar shades eliminating glare while maintaining mountain views.' },
-  { id: '5', title: 'Roman Shades Dining Room', shadeType: 'Roman', roomType: 'Dining Room', location: 'Scottsdale', description: 'Hobbled fold Roman shades in designer linen fabric for an elegant dining space.' },
-  { id: '6', title: 'Exterior Patio Drop Shades', shadeType: 'Exterior', roomType: 'Patio', location: 'Chandler', description: 'Motorized cable-guided exterior shades transforming a covered patio into a bug-free retreat.' },
-  { id: '7', title: 'Skylight Motorized Shades', shadeType: 'Motorized', roomType: 'Living Room', location: 'Paradise Valley', description: 'Custom motorized shades for 12 skylights controlled via Apple HomeKit.' },
-  { id: '8', title: 'Kitchen Roller Shades', shadeType: 'Roller', roomType: 'Kitchen', location: 'Gilbert', description: 'Light-filtering roller shades in a moisture-resistant fabric for a modern kitchen.' },
-  { id: '9', title: 'Media Room Blackout', shadeType: 'Motorized', roomType: 'Media Room', location: 'Scottsdale', description: 'Motorized blackout shades integrated with Lutron HomeWorks for a dedicated home theater.' },
-  { id: '10', title: 'Pool Area Exterior Shades', shadeType: 'Exterior', roomType: 'Patio', location: 'Mesa', description: 'Sealed-track exterior shades providing shade and wind protection at a resort-style pool.' },
-  { id: '11', title: 'Nursery Cellular Blackout', shadeType: 'Cellular', roomType: 'Bedroom', location: 'Gilbert', description: 'Cordless blackout cellular shades creating a safe, dark environment for a nursery.' },
-  { id: '12', title: 'Flat Fold Romans Study', shadeType: 'Roman', roomType: 'Office', location: 'Phoenix', description: 'Flat fold Roman shades in a neutral linen adding warmth to a minimalist home office.' },
+  { id: '1', title: 'Modern Great Room Motorized Shades', shadeType: 'Motorized', roomType: 'Living Room', location: 'Scottsdale', description: 'Floor-to-ceiling motorized solar shades with Lutron integration in a contemporary home.', image: '/images/gallery/great-room-motorized.jpg' },
+  { id: '2', title: 'Blackout Roller Master Suite', shadeType: 'Roller', roomType: 'Bedroom', location: 'Paradise Valley', description: 'Blackout roller shades with cassette valance in a luxury master bedroom.', image: '/images/gallery/blackout-roller-master.webp' },
+  { id: '3', title: 'Cellular Shades Family Room', shadeType: 'Cellular', roomType: 'Living Room', location: 'Phoenix', description: 'Double-cell honeycomb shades reducing cooling costs in a west-facing family room.', image: '/images/gallery/cellular-family-room.webp' },
+  { id: '4', title: 'Solar Shades Home Office', shadeType: 'Solar', roomType: 'Office', location: 'Tempe', description: '5% openness solar shades eliminating glare while maintaining mountain views.', image: '/images/gallery/solar-home-office.webp' },
+  { id: '5', title: 'Roman Shades Dining Room', shadeType: 'Roman', roomType: 'Dining Room', location: 'Scottsdale', description: 'Hobbled fold Roman shades in designer linen fabric for an elegant dining space.', image: '/images/gallery/roman-dining-room.png' },
+  { id: '6', title: 'Exterior Patio Drop Shades', shadeType: 'Exterior', roomType: 'Patio', location: 'Chandler', description: 'Motorized cable-guided exterior shades transforming a covered patio into a bug-free retreat.', image: '/images/gallery/exterior-patio-drop.png' },
+  { id: '7', title: 'Skylight Motorized Shades', shadeType: 'Motorized', roomType: 'Living Room', location: 'Paradise Valley', description: 'Custom motorized shades for 12 skylights controlled via Apple HomeKit.', image: '/images/gallery/skylight-motorized.png' },
+  { id: '8', title: 'Kitchen Roller Shades', shadeType: 'Roller', roomType: 'Kitchen', location: 'Gilbert', description: 'Light-filtering roller shades in a moisture-resistant fabric for a modern kitchen.', image: '/images/gallery/kitchen-roller.png' },
+  { id: '9', title: 'Media Room Blackout', shadeType: 'Motorized', roomType: 'Media Room', location: 'Scottsdale', description: 'Motorized blackout shades integrated with Lutron HomeWorks for a dedicated home theater.', image: '/images/gallery/media-room-blackout.webp' },
+  { id: '10', title: 'Pool Area Exterior Shades', shadeType: 'Exterior', roomType: 'Patio', location: 'Mesa', description: 'Sealed-track exterior shades providing shade and wind protection at a resort-style pool.', image: '/images/gallery/pool-exterior.jpg' },
+  { id: '11', title: 'Nursery Cellular Blackout', shadeType: 'Cellular', roomType: 'Bedroom', location: 'Gilbert', description: 'Cordless blackout cellular shades creating a safe, dark environment for a nursery.', image: '/images/gallery/nursery-cellular.png' },
+  { id: '12', title: 'Flat Fold Romans Study', shadeType: 'Roman', roomType: 'Office', location: 'Phoenix', description: 'Flat fold Roman shades in a neutral linen adding warmth to a minimalist home office.', image: '/images/gallery/flat-fold-romans.webp' },
 ];
 
 const shadeFilters = ['All', 'Motorized', 'Roller', 'Cellular', 'Solar', 'Roman', 'Exterior'];
@@ -90,12 +92,14 @@ export function GalleryGrid() {
             onClick={() => setSelectedItem(item)}
             className="group text-left bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-sand/30"
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-sand-light to-warm-gray relative">
-              <div className="absolute inset-0 flex items-center justify-center text-sand-dark/40">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
+            <div className="aspect-[4/3] relative overflow-hidden bg-sand-light">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
               <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/10 transition-colors flex items-center justify-center">
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white bg-navy/60 px-3 py-1.5 rounded-lg text-sm">View Details</span>
               </div>
@@ -120,10 +124,14 @@ export function GalleryGrid() {
           onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }}
         >
           <div className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="aspect-[16/10] bg-gradient-to-br from-sand-light to-warm-gray flex items-center justify-center">
-              <svg className="w-20 h-20 text-sand-dark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+            <div className="aspect-[16/10] relative overflow-hidden bg-sand-light">
+              <Image
+                src={selectedItem.image}
+                alt={selectedItem.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+              />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-navy mb-1">{selectedItem.title}</h3>

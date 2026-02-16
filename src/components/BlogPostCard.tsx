@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface BlogPostCardProps {
   slug: string;
@@ -17,6 +18,7 @@ export function BlogPostCard({
   category,
   readingTime,
   datePublished,
+  image,
 }: BlogPostCardProps) {
   const formattedDate = new Date(datePublished).toLocaleDateString('en-US', {
     month: 'long',
@@ -29,12 +31,14 @@ export function BlogPostCard({
       href={`/blog/${slug}`}
       className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-sand/30"
     >
-      <div className="aspect-[16/9] bg-gradient-to-br from-sage/20 to-sand-light relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-sage/40">
-          <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-          </svg>
-        </div>
+      <div className="aspect-[16/9] relative overflow-hidden bg-sand-light">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
       </div>
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CTABanner } from '@/components/CTABanner';
@@ -10,7 +11,7 @@ export const metadata = buildMetadata({
 });
 
 const team = [
-  { name: 'Scott Dawson', role: 'Founder & CEO', bio: 'With over 15 years in the window treatment industry, Scott founded SmarterShading to bring premium motorized shade solutions to Arizona homeowners. His passion for smart home technology and desert-climate design drives the company vision.' },
+  { name: 'Scott Dawson', role: 'Founder & CEO', bio: 'With over 15 years in the window treatment industry, Scott founded SmarterShading to bring premium motorized shade solutions to homeowners across the West. His passion for smart home technology and climate-specific design drives the company vision.' },
   { name: 'Sarah Chen', role: 'Head of Design', bio: 'Sarah brings 12 years of interior design experience to every project. She works directly with clients, architects, and designers to ensure every shade installation enhances the home\'s aesthetic.' },
   { name: 'David Martinez', role: 'Installation Director', bio: 'David leads our installation teams with a focus on precision and care. A licensed electrician by trade, he ensures every motorized installation meets the highest standards of quality and safety.' },
   { name: 'Jessica Patel', role: 'Client Experience Manager', bio: 'Jessica oversees the client journey from first consultation to post-installation follow-up. Her dedication to service excellence is reflected in our 4.9-star average rating.' },
@@ -20,7 +21,7 @@ const values = [
   { title: 'Craftsmanship', description: 'Every shade is custom-built and installed with meticulous attention to detail. We never cut corners on materials, hardware, or installation quality.' },
   { title: 'Technology', description: 'We stay at the forefront of smart home integration and motorization technology. As an authorized Lutron dealer, our team is certified across Triathlon, Sivoia QS, and Palladiom product lines.' },
   { title: 'Service', description: 'From your first call to years after installation, we are committed to your complete satisfaction. Our lifetime motor warranty backs that promise.' },
-  { title: 'Expertise', description: '15+ years of solving Arizona\'s unique sun and heat challenges. We know which products perform in our climate — because we have tested them all.' },
+  { title: 'Expertise', description: '15+ years of solving unique climate challenges — from desert heat to Pacific Northwest winters. We know which products perform in every environment because we have tested them all.' },
 ];
 
 export default function AboutPage() {
@@ -38,8 +39,8 @@ export default function AboutPage() {
           </h1>
           <p className="text-lg text-charcoal-light leading-relaxed">
             SmarterShading was founded with a simple mission: bring premium motorized window shade
-            solutions to Arizona homeowners who demand the best. Over 15 years and 2,500+
-            installations later, we have become the region&apos;s most trusted shade company —
+            solutions to homeowners who demand the best. Over 15 years and 2,500+
+            installations later, we have become one of the most trusted shade companies in the West —
             and we are just getting started.
           </p>
         </div>
@@ -53,26 +54,30 @@ export default function AboutPage() {
             <div className="space-y-4 text-charcoal-light leading-relaxed">
               <p>
                 SmarterShading started in 2010 when our founder, Scott Dawson, noticed a gap in the
-                Arizona market. Homeowners were spending thousands on window treatments that were not
-                designed for desert conditions — fabrics that faded in months, motors that overheated,
-                and installers who did not understand the unique challenges of our climate.
+                market. Homeowners were spending thousands on window treatments that were not
+                designed for their specific climate — fabrics that faded in intense sun, motors that
+                underperformed in extreme temperatures, and installers who did not understand regional challenges.
               </p>
               <p>
-                Scott set out to build a company that combined premium products with deep local expertise.
+                Scott set out to build a company that combined premium products with deep regional expertise.
                 He partnered with Lutron — the world&apos;s leader in motorized shading — and
-                built an installation team trained specifically for Arizona conditions.
+                built installation teams trained for the specific conditions in each market we serve.
               </p>
               <p>
-                Today, SmarterShading serves thousands of homeowners across Arizona, California, Nevada,
-                Oregon, and Washington. Our reputation is built on one project at a time, with the same
+                Today, SmarterShading serves thousands of homeowners across Arizona, Washington State,
+                and Northern Idaho. Our reputation is built on one project at a time, with the same
                 attention to quality and service that defined our very first installation.
               </p>
             </div>
           </div>
-          <div className="aspect-[4/3] bg-gradient-to-br from-sand-light to-sand rounded-2xl flex items-center justify-center">
-            <svg className="w-20 h-20 text-sand-dark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
+          <div className="aspect-[4/3] relative rounded-2xl overflow-hidden">
+            <Image
+              src="/images/hero/about-craftsmanship.jpg"
+              alt="SmarterShading craftsmanship and attention to detail"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>

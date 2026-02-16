@@ -12,13 +12,17 @@ const arizonaLocations = [
   { name: 'Tucson', slug: 'tucson' },
 ];
 
-const westCoastLocations = [
-  { name: 'Los Angeles', slug: 'los-angeles' },
-  { name: 'San Diego', slug: 'san-diego' },
-  { name: 'Las Vegas', slug: 'las-vegas' },
-  { name: 'San Francisco', slug: 'san-francisco' },
-  { name: 'Portland', slug: 'portland' },
+const washingtonLocations = [
   { name: 'Seattle', slug: 'seattle' },
+  { name: 'Bellevue', slug: 'bellevue' },
+  { name: 'Tacoma', slug: 'tacoma' },
+  { name: 'Spokane', slug: 'spokane' },
+];
+
+const idahoLocations = [
+  { name: 'Coeur d\'Alene', slug: 'coeur-d-alene' },
+  { name: 'Post Falls', slug: 'post-falls' },
+  { name: 'Sandpoint', slug: 'sandpoint' },
 ];
 
 export function ServiceAreaMap() {
@@ -32,7 +36,7 @@ export function ServiceAreaMap() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           <p className="text-charcoal-light text-sm">Service area map</p>
-          <p className="text-charcoal-light/60 text-xs mt-1">Arizona &bull; California &bull; Nevada &bull; Oregon &bull; Washington</p>
+          <p className="text-charcoal-light/60 text-xs mt-1">Arizona &bull; Washington &bull; Northern Idaho</p>
         </div>
       </div>
 
@@ -53,9 +57,23 @@ export function ServiceAreaMap() {
           </div>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-navy mb-3">West Coast</h3>
+          <h3 className="text-lg font-bold text-navy mb-3">Washington</h3>
           <div className="flex flex-wrap gap-2">
-            {westCoastLocations.map((loc) => (
+            {washingtonLocations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/locations/${loc.slug}`}
+                className="px-3 py-1.5 bg-white rounded-full text-sm text-charcoal hover:text-terracotta hover:bg-sand-light border border-sand/50 transition-colors"
+              >
+                {loc.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="text-lg font-bold text-navy mb-3">Northern Idaho</h3>
+          <div className="flex flex-wrap gap-2">
+            {idahoLocations.map((loc) => (
               <Link
                 key={loc.slug}
                 href={`/locations/${loc.slug}`}

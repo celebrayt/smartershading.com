@@ -21,13 +21,17 @@ const arizonaLocations = [
   { name: 'Tucson', href: '/locations/tucson' },
 ];
 
-const westCoastLocations = [
-  { name: 'Los Angeles', href: '/locations/los-angeles' },
-  { name: 'San Diego', href: '/locations/san-diego' },
-  { name: 'Las Vegas', href: '/locations/las-vegas' },
-  { name: 'San Francisco', href: '/locations/san-francisco' },
-  { name: 'Portland', href: '/locations/portland' },
+const washingtonLocations = [
   { name: 'Seattle', href: '/locations/seattle' },
+  { name: 'Bellevue', href: '/locations/bellevue' },
+  { name: 'Tacoma', href: '/locations/tacoma' },
+  { name: 'Spokane', href: '/locations/spokane' },
+];
+
+const idahoLocations = [
+  { name: 'Coeur d\'Alene', href: '/locations/coeur-d-alene' },
+  { name: 'Post Falls', href: '/locations/post-falls' },
+  { name: 'Sandpoint', href: '/locations/sandpoint' },
 ];
 
 export function Footer() {
@@ -45,7 +49,7 @@ export function Footer() {
             <p className="text-sand-dark text-sm leading-relaxed mb-6">
               Arizona&apos;s premier provider of motorized and automated window shades.
               Expert installation, smart home integration, and solutions designed
-              for desert living.
+              for every climate.
             </p>
             <div className="flex gap-4">
               {['Facebook', 'Instagram', 'Pinterest', 'YouTube'].map((social) => (
@@ -92,9 +96,21 @@ export function Footer() {
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">West Coast</p>
+                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">Washington</p>
                 <ul className="space-y-1.5">
-                  {westCoastLocations.map((loc) => (
+                  {washingtonLocations.map((loc) => (
+                    <li key={loc.href}>
+                      <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
+                        {loc.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">Northern Idaho</p>
+                <ul className="space-y-1.5">
+                  {idahoLocations.map((loc) => (
                     <li key={loc.href}>
                       <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
                         {loc.name}

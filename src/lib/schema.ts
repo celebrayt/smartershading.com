@@ -6,7 +6,7 @@ export function buildOrganizationSchema() {
     url: 'https://smartershading.com',
     logo: 'https://smartershading.com/logo.png',
     description:
-      'Premium motorized and automated window shades for Arizona and West Coast homes. Expert installation, smart home integration, and desert-climate solutions.',
+      'Premium motorized and automated window shades for Arizona, Washington, and Northern Idaho homes. Expert Lutron installation, smart home integration, and climate-specific solutions.',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-480-555-0123',

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { products } from '@/data/products';
 import { testimonials } from '@/data/testimonials';
@@ -14,7 +15,7 @@ import { buildLocalBusinessSchema } from '@/lib/schema';
 export const metadata = buildMetadata({
   title: 'Premium Motorized Window Shades Arizona',
   description:
-    'Arizona\'s premier provider of premium motorized and automated window shades. Expert installation, smart home integration, and solutions designed for desert living.',
+    'Premium motorized and automated window shades for every climate. Expert installation, smart home integration, and solutions designed for your home.',
   path: '/',
 });
 
@@ -25,8 +26,8 @@ const valueProps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    title: 'Desert Climate Expertise',
-    description: '15+ years solving Arizona\'s toughest sun and heat challenges. We know which shades perform in 115°F summers.',
+    title: 'Climate Expertise',
+    description: '15+ years solving the toughest sun, heat, and cold challenges. We know which shades perform in every climate.',
   },
   {
     icon: (
@@ -61,7 +62,7 @@ const stats = [
   { value: '2,500+', label: 'Installations Completed' },
   { value: '15+', label: 'Years of Experience' },
   { value: '4.9/5', label: 'Average Client Rating' },
-  { value: '5 States', label: 'Service Coverage' },
+  { value: '3 States', label: 'Service Coverage' },
 ];
 
 export default function Home() {
@@ -81,6 +82,13 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-navy via-navy to-charcoal overflow-hidden">
+        <Image
+          src="/images/hero/homepage-hero.webp"
+          alt=""
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,101,58,0.15),transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 relative">
           <div className="max-w-3xl">
@@ -88,12 +96,12 @@ export default function Home() {
               Arizona&apos;s Premier Shade Specialists
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Premium Motorized Shades for Desert Living
+              Premium Motorized Shades for Every Home
             </h1>
             <p className="text-xl text-sand-light/80 leading-relaxed mb-8 max-w-2xl">
-              Transform your home with automated window shades that cut cooling costs,
+              Transform your home with automated window shades that cut energy costs,
               protect your interiors, and integrate seamlessly with your smart home —
-              all designed for Arizona&apos;s extreme climate.
+              engineered for every climate from desert heat to Pacific Northwest winters.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -139,7 +147,7 @@ export default function Home() {
             </h2>
             <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
               From motorized automation to timeless Roman folds — every shade custom-built
-              for your home and Arizona&apos;s demanding climate.
+              for your home and your climate.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -162,11 +170,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Arizona Homeowners Choose Us
+              Why Homeowners Choose Us
             </h2>
             <p className="text-lg text-sand-light/70 max-w-2xl mx-auto">
               We have been designing, installing, and perfecting window shade solutions
-              for desert homes since day one.
+              since day one.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -199,7 +207,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-lg text-charcoal-light">
-              Real reviews from Arizona homeowners who trust SmarterShading.
+              Real reviews from homeowners who trust SmarterShading.
             </p>
           </div>
           <TestimonialCarousel testimonials={testimonials.slice(0, 6)} />
@@ -211,11 +219,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Serving Arizona & the West Coast
+              Serving Arizona, Washington & Northern Idaho
             </h2>
             <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
-              Headquartered in Scottsdale with service teams across Arizona, California,
-              Nevada, Oregon, and Washington.
+              Headquartered in Scottsdale with service teams across Arizona,
+              Washington State, and Northern Idaho.
             </p>
           </div>
           <ServiceAreaMap />
