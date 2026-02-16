@@ -38,7 +38,8 @@ export function Footer() {
   return (
     <footer className="bg-navy text-sand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* Top Row: Brand + Products + 3 Location Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div>
             <Link href="/" className="inline-block mb-4">
@@ -47,7 +48,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sand-dark text-sm leading-relaxed mb-6">
-              Arizona&apos;s premier provider of motorized and automated window shades.
+              Premium motorized and automated window shades.
               Expert installation, smart home integration, and solutions designed
               for every climate.
             </p>
@@ -79,80 +80,68 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Locations Column */}
+          {/* Arizona Column */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Service Areas</h3>
-            <div className="space-y-4">
-              <div>
-                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">Arizona</p>
-                <ul className="space-y-1.5">
-                  {arizonaLocations.map((loc) => (
-                    <li key={loc.href}>
-                      <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
-                        {loc.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">Washington</p>
-                <ul className="space-y-1.5">
-                  {washingtonLocations.map((loc) => (
-                    <li key={loc.href}>
-                      <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
-                        {loc.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-sand-dark uppercase tracking-wider mb-2">Northern Idaho</p>
-                <ul className="space-y-1.5">
-                  {idahoLocations.map((loc) => (
-                    <li key={loc.href}>
-                      <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
-                        {loc.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <h3 className="text-white font-semibold mb-4">Arizona</h3>
+            <ul className="space-y-1.5">
+              {arizonaLocations.map((loc) => (
+                <li key={loc.href}>
+                  <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
+                    {loc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Washington Column */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href="tel:+14805550123" className="text-sand-dark hover:text-white transition-colors">
-                  (480) 555-0123
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@smartershading.com" className="text-sand-dark hover:text-white transition-colors">
-                  info@smartershading.com
-                </a>
-              </li>
-              <li className="text-sand-dark">
-                123 N. Scottsdale Road, Suite 200<br />
-                Scottsdale, AZ 85250
-              </li>
-              <li className="text-sand-dark">
-                Mon-Fri: 8am - 6pm<br />
-                Sat: 9am - 4pm
-              </li>
+            <h3 className="text-white font-semibold mb-4">Washington</h3>
+            <ul className="space-y-1.5">
+              {washingtonLocations.map((loc) => (
+                <li key={loc.href}>
+                  <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
+                    {loc.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-            <div className="mt-6">
-              <Link
-                href="/contact"
-                className="inline-block bg-terracotta hover:bg-terracotta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
-              >
-                Free Consultation
-              </Link>
+          </div>
+
+          {/* Northern Idaho Column */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Northern Idaho</h3>
+            <ul className="space-y-1.5">
+              {idahoLocations.map((loc) => (
+                <li key={loc.href}>
+                  <Link href={loc.href} className="text-sand-dark hover:text-white transition-colors text-sm">
+                    {loc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Us Row */}
+        <div className="border-t border-navy-light mt-12 pt-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+              <h3 className="text-white font-semibold">Contact Us</h3>
+              <a href="tel:+14805550123" className="text-sand-dark hover:text-white transition-colors">
+                (480) 555-0123
+              </a>
+              <a href="mailto:info@smartershading.com" className="text-sand-dark hover:text-white transition-colors">
+                info@smartershading.com
+              </a>
+              <span className="text-sand-dark">Mon-Fri: 8am - 6pm &middot; Sat: 9am - 4pm</span>
             </div>
+            <Link
+              href="/contact"
+              className="inline-block bg-terracotta hover:bg-terracotta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+            >
+              Free Virtual Consultation
+            </Link>
           </div>
         </div>
       </div>

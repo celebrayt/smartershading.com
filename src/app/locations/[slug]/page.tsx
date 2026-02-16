@@ -202,7 +202,7 @@ export default async function LocationPage({ params }: Props) {
 
       <CTABanner
         heading={`Ready for Premium Shades in ${location.name}?`}
-        description={`Schedule a free in-home consultation with our ${location.name} shade experts. We'll measure your windows, show you fabric samples, and provide a detailed quote — all at no cost.`}
+        description={`Schedule a free virtual consultation with our ${location.name} shade experts. We'll help you choose the perfect shades for your space and provide a detailed quote — all at no cost.`}
       />
     </>
   );

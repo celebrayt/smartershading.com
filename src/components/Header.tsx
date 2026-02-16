@@ -108,26 +108,32 @@ export function Header() {
                 </svg>
               </button>
               {locationsOpen && (
-                <div className="absolute top-full left-0 pt-2">
-                  <div className="bg-white rounded-lg shadow-lg border border-sand/50 py-2 w-56 max-h-80 overflow-y-auto">
-                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider">Arizona</div>
-                    {azLocations.map((loc) => (
-                      <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
-                        {loc.name}
-                      </Link>
-                    ))}
-                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider mt-2 border-t border-sand/50 pt-3">Washington</div>
-                    {waLocations.map((loc) => (
-                      <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
-                        {loc.name}
-                      </Link>
-                    ))}
-                    <div className="px-4 py-1.5 text-xs font-semibold text-charcoal-light uppercase tracking-wider mt-2 border-t border-sand/50 pt-3">Northern Idaho</div>
-                    {idLocations.map((loc) => (
-                      <Link key={loc.href} href={loc.href} className="block px-4 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors" onClick={() => setLocationsOpen(false)}>
-                        {loc.name}
-                      </Link>
-                    ))}
+                <div className="absolute top-full -left-4 pt-2">
+                  <div className="bg-white rounded-lg shadow-lg border border-sand/50 py-4 px-2 grid grid-cols-3 gap-x-6 w-[540px]">
+                    <div>
+                      <Link href="/locations/arizona" className="block px-3 py-1.5 text-xs font-semibold text-terracotta uppercase tracking-wider hover:text-terracotta-dark transition-colors" onClick={() => setLocationsOpen(false)}>Arizona</Link>
+                      {azLocations.map((loc) => (
+                        <Link key={loc.href} href={loc.href} className="block px-3 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors text-sm" onClick={() => setLocationsOpen(false)}>
+                          {loc.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <div>
+                      <Link href="/locations/washington" className="block px-3 py-1.5 text-xs font-semibold text-terracotta uppercase tracking-wider hover:text-terracotta-dark transition-colors" onClick={() => setLocationsOpen(false)}>Washington</Link>
+                      {waLocations.map((loc) => (
+                        <Link key={loc.href} href={loc.href} className="block px-3 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors text-sm" onClick={() => setLocationsOpen(false)}>
+                          {loc.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <div>
+                      <Link href="/locations/northern-idaho" className="block px-3 py-1.5 text-xs font-semibold text-terracotta uppercase tracking-wider hover:text-terracotta-dark transition-colors" onClick={() => setLocationsOpen(false)}>Northern Idaho</Link>
+                      {idLocations.map((loc) => (
+                        <Link key={loc.href} href={loc.href} className="block px-3 py-2 text-charcoal hover:bg-sand-light hover:text-terracotta transition-colors text-sm" onClick={() => setLocationsOpen(false)}>
+                          {loc.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

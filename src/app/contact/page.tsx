@@ -5,7 +5,7 @@ import { ServiceAreaMap } from '@/components/ServiceAreaMap';
 
 export const metadata = buildMetadata({
   title: 'Free Consultation',
-  description: 'Schedule a free in-home window shade consultation. Our experts will measure, show samples, and provide a detailed quote — no obligation.',
+  description: 'Schedule a free virtual window shade consultation. Our experts will help you choose the perfect shades and provide a detailed quote — no obligation.',
   path: '/contact',
 });
 
@@ -26,8 +26,9 @@ export default function ContactPage() {
               </h1>
               <p className="text-charcoal-light mb-8 leading-relaxed">
                 Fill out the form below and a shade specialist will contact you within 24 hours
-                to schedule your free in-home visit. We&apos;ll measure your windows, show you
-                fabric samples in your lighting, and provide a detailed quote — all at no cost.
+                to schedule your free virtual consultation. We&apos;ll walk you through fabric
+                options, help you choose the perfect shades for your space, and provide a detailed
+                quote — all from the comfort of your home.
               </p>
               <ConsultationForm />
             </div>
@@ -57,12 +58,11 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-terracotta mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                     <div>
-                      <p className="font-semibold text-navy">Showroom</p>
-                      <p className="text-charcoal-light">123 N. Scottsdale Road, Suite 200<br />Scottsdale, AZ 85250</p>
+                      <p className="font-semibold text-navy">Virtual Consultations</p>
+                      <p className="text-charcoal-light">Video calls available via Zoom or FaceTime.<br />We serve AZ, WA &amp; Northern Idaho.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -77,15 +77,24 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-sand-light to-warm-gray rounded-xl flex items-center justify-center border border-sand/30">
-                <div className="text-center">
-                  <svg className="w-12 h-12 mx-auto text-sage/40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="text-charcoal-light text-sm">Google Maps embed</p>
-                </div>
+              {/* How It Works */}
+              <div className="bg-navy rounded-xl p-8 text-white">
+                <h2 className="text-xl font-bold mb-6">How Our Virtual Consultation Works</h2>
+                <ol className="space-y-4">
+                  {[
+                    { step: '1', title: 'Book Your Call', desc: 'Fill out the form and we\'ll schedule a video call at your convenience.' },
+                    { step: '2', title: 'Show Us Your Space', desc: 'Walk us through your rooms on camera so we can assess windows, lighting, and style.' },
+                    { step: '3', title: 'Get Your Quote', desc: 'We\'ll recommend the best shades for your needs and send a detailed quote within 24 hours.' },
+                  ].map((item) => (
+                    <li key={item.step} className="flex gap-4">
+                      <span className="w-8 h-8 rounded-full bg-terracotta flex items-center justify-center text-sm font-bold shrink-0">{item.step}</span>
+                      <div>
+                        <p className="font-semibold">{item.title}</p>
+                        <p className="text-sand-light/70 text-sm">{item.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
           </div>
